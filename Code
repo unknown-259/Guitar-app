@@ -1,0 +1,216 @@
+setScreen("homeScreen");
+// Homescreen code
+
+// Guitar music
+onEvent("imageGuitar", "click", function(event) {
+  playSound("Le-Sud.mp3", true);
+  console.log("Song is now playing.");
+});
+
+// Buttons
+onEvent("buttonGuitarStrings", "click", function(event) {
+  setScreen("guitarStrings");
+  console.log("Button to Guitar Strings have been pressed.");
+  stopSound("Le-Sud.mp3");
+});
+
+onEvent("buttonToLayout", "click", function(event) {
+  setScreen("guitarLayout");
+  console.log("Button to Guitar Layout have been pressed.");
+  stopSound("Le-Sud.mp3");
+});
+
+onEvent("buttonToMusicSheet", "click", function(event) {
+  setScreen("musicSheet");
+  console.log("Button to Music Sheet have been pressed.");
+  stopSound("Le-Sud.mp3");
+});
+
+//Code for guitarLayout 
+onEvent("buttonGo", "click", function(event) {
+  if (getText("dropdownParts") == "Headstock") {
+console.log("Headstock selected");
+hideElement("imageLeftArrow");
+showElement("imageRightArrow");
+setProperty("imageRightArrow", "y", 15);
+setProperty("imageRightArrow", "x", 40);
+ 
+  } else if ((getText("dropdownParts") == "Tuning Pegs")) {
+console.log("Tuning pegs selected");
+hideElement("imageLeftArrow");
+showElement("imageRightArrow");
+setProperty("imageRightArrow", "y", 45);
+setProperty("imageRightArrow", "x", 40);
+  
+  } else if ((getText("dropdownParts") == "Nut")) {
+console.log("Nut selected");
+hideElement("imageRightArrow");
+showElement("imageLeftArrow");
+setProperty("imageLeftArrow", "y", 73);
+  setProperty("imageLeftArrow", "x", 140);
+  
+  } else if ((getText("dropdownParts") == "Neck")) {
+console.log("Frets selected");
+hideElement("imageRightArrow");
+showElement("imageLeftArrow");
+setProperty("imageLeftArrow", "y", 175);
+  setProperty("imageLeftArrow", "x", 140);
+  
+  } else if ((getText("dropdownParts") == "Frets")) {
+console.log("Frets selected");
+hideElement("imageRightArrow");
+showElement("imageLeftArrow");
+setProperty("imageLeftArrow", "y", 95);
+  setProperty("imageLeftArrow", "x", 140);
+  
+  } else if ((getText("dropdownParts") == "Body")) {
+console.log("Body selected");
+hideElement("imageRightArrow");
+showElement("imageLeftArrow");
+setProperty("imageLeftArrow", "y", 230);
+setProperty("imageLeftArrow", "x", 175);
+  
+  } else if ((getText("dropdownParts") == "Sound Hole")) {
+console.log("Sound hole selected");
+hideElement("imageRightArrow");
+showElement("imageLeftArrow");
+setProperty("imageLeftArrow", "y", 260);
+setProperty("imageLeftArrow", "x", 150);
+  
+  } else if ((getText("dropdownParts") == "Strings")) {
+console.log("Strings selected");
+hideElement("imageLeftArrow");
+showElement("imageRightArrow");
+setProperty("imageRightArrow", "y", 305);
+setProperty("imageRightArrow", "x", 47);
+  
+  } else if ((getText("dropdownParts") == "Bridge")) {
+console.log("Bridge selected");
+hideElement("imageRightArrow");
+showElement("imageLeftArrow");
+setProperty("imageLeftArrow", "y", 335);
+setProperty("imageLeftArrow", "x", 160);
+  }
+});
+
+//Back button
+onEvent("buttonHome1", "click", function( ) {
+  setScreen("homeScreen");
+});
+
+//Code for musicSheet 
+onEvent("note1", "click", function( ) {
+  playSound("note1.mp3", false);
+});
+
+onEvent("note2", "click", function( ) {
+  playSound("note2.mp3", false);
+});
+
+onEvent("note3", "click", function( ) {
+  playSound("note3.mp3", false);
+});
+
+onEvent("note4", "click", function( ) {
+  playSound("note4.mp3", false);
+});
+
+onEvent("note5", "click", function( ) {
+  playSound("note5.mp3", false);
+});
+
+onEvent("note6", "click", function( ) {
+  playSound("note6.mp3", false);
+});
+
+onEvent("note7", "click", function( ) {
+  playSound("note7.mp3", false);
+});
+
+onEvent("note8", "click", function( ) {
+  playSound("note8.mp3", false);
+});
+
+onEvent("note9", "click", function( ) {
+  playSound("note9.mp3", false);
+});
+
+onEvent("note10", "click", function( ) {
+  playSound("note10.mp3", false);
+});
+
+onEvent("note11", "click", function( ) {
+  playSound("note11.mp3", false);
+});
+
+onEvent("note12", "click", function( ) {
+  playSound("note12.mp3", false);
+});
+
+onEvent("note13", "click", function( ) {
+  playSound("note13.mp3", false);
+});
+
+onEvent("note14", "click", function( ) {
+  playSound("note14.mp3", false);
+});
+
+onEvent("note15", "click", function( ) {
+  playSound("note15.mp3", false);
+});
+
+onEvent("note16", "click", function( ) {
+  playSound("note16.mp3", false);
+});
+
+onEvent("note17", "click", function( ) {
+  playSound("note17.mp3", false);
+});
+
+// Back button
+onEvent("buttonHome2", "click", function( ) {
+  setScreen("homeScreen");
+});
+
+// Code for guitar strings
+onEvent("noteLowE", "click", function(event){
+  console.log("Low Note E has been pressed");
+  setText("directions/noteInformation", "This is low string E");
+  playSound("note1.mp3", false);
+});
+
+onEvent("noteA", "click", function(event){
+  console.log("Note A has been pressed");
+  setText("directions/noteInformation", "This is string A");
+  playSound("note4.mp3", false);
+});
+
+onEvent("noteD", "click", function(event){
+  console.log("Note D has been pressed");
+  setText("directions/noteInformation", "This is string D");
+  playSound("note7.mp3", false);
+});
+
+onEvent("noteG", "click", function(event){
+  console.log("Note G has been pressed");
+  setText("directions/noteInformation", "This is string G");
+  playSound("note10.mp3", false);
+});
+
+onEvent("noteB", "click", function(event){
+  console.log("Note B has been pressed");
+  setText("directions/noteInformation", "This is string B");
+  playSound("note12.mp3", false);
+});
+
+onEvent("noteE", "click", function(event){
+  console.log("LowNote E has been pressed");
+  setText("directions/noteInformation", "This is string E");
+  playSound("note15.mp3", false);
+});
+
+// Back button
+onEvent("Home", "click", function(event) {
+  console.log("Button to go back as been pressed.");
+  setScreen("homeScreen");
+});
